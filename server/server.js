@@ -1,5 +1,6 @@
 const express = require('express');
 const { ApolloServer } = require('@apollo/server');
+// const { ApolloServer } = require("apollo-server-express");
 const path = require('path');
 const { expressMiddleware } = require('@apollo/server/express4');
 const { authMiddleware } = require('./utils/auth');
@@ -14,6 +15,8 @@ const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  // context: authMiddleware,
+  // introspection: process.env.NODE_ENV !== 'production'
 });
 
 const startApolloServer = async () => {
