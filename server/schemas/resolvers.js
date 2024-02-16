@@ -59,7 +59,25 @@ const resolvers = {
         return updateUsersBooks;  
       }
       throw AuthenticationError;
-    }
+    },
+
+    addBook: async (parent, { userId, newBook }, context) => {
+      
+      // if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: userId },
+          {
+            $addToSet: { savedBooks: newBook },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      // }
+     
+      throw AuthenticationError;
+    },
 
   }
 
