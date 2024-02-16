@@ -1,7 +1,7 @@
 const typeDefs =`
 
   type User {
-    _id: ID
+    _id: ID!
     username: String
     email: String
     password: String
@@ -15,6 +15,7 @@ const typeDefs =`
     description: String
     title: String
     image: String
+    link: String
   }
 
   input InputBook {
@@ -32,9 +33,11 @@ const typeDefs =`
     user: User
   }
 
+
   type Query {
     me: User
     users: [User]
+    user(userId: ID!): User
 
   }
 
@@ -43,6 +46,7 @@ const typeDefs =`
     login(email: String!, password: String!): Auth
     saveBook(newBook: InputBook!): User
     addBook(userId: ID!, newBook: InputBook): User
+    removeBook(bookId: ID!): User
   }
 
 `;

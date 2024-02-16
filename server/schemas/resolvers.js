@@ -4,13 +4,13 @@ const { signToken, AuthenticationError } =  require('../utils/auth');
 const resolvers = {
 
   Query: {
-    // By adding context to "me" query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
       if (context.user) {
-        const userInfo = await 
-        User
-          .findOne({ _id: context.user._id }).select('-__v -password');
-          return userInfo;
+        // const userInfo = await 
+        return await User.findOne({ _id: context.user._id });
+        // return await User.findOne({ _id: userId });
+          // .findOne(context.user._id);
+          // return userInfo;
       }
       throw AuthenticationError;
     },
@@ -19,6 +19,11 @@ const resolvers = {
       return await User
         .find({});
         
+    },
+
+    user: async (_, { userId }) => {
+      return await User.findOne({ _id: userId });
+
     },
 
   },
@@ -57,6 +62,19 @@ const resolvers = {
             { new: true }
           );
         return updateUsersBooks;  
+      }
+      throw AuthenticationError;
+    },
+
+    removeBook: async (_, { bookId }, context) => {
+      if (context.user) {
+        const updateUsersBooks = await User
+          .findByIdAndUpdate (
+            { _id: context.user._id}, 
+            { $pull: { savedBooks: { bookId } } }, 
+            { new: true, runValidators: true }
+          );
+        return updateUsersBooks;
       }
       throw AuthenticationError;
     },
