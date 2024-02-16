@@ -11,16 +11,20 @@ const resolvers = {
           .findOne({ _id: context.user._id});
       }
       throw AuthenticationError;
-    }
+    },
 
-
+    users: async () => {
+      return await User
+        .find({});
+        
+    },
 
   },
 
 
   Mutation: {
     
-    addUser: async (_, { username, email, password}) => {
+    addUser: async (_, { username, email, password }) => {
       const user = await User.create({ username, email, password});
       const token = signToken(user);
       return { token, user }

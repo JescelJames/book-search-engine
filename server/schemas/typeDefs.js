@@ -5,12 +5,19 @@ const typeDefs =`
     username: String!
     email: String!
     
+    
+    
 
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
 
   type Query {
     me: User
+    users: [User]
 
   }
 

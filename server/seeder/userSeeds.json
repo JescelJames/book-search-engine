@@ -3,7 +3,7 @@
     "username": "johndoe",
     "name": "John Doe",
     "email": "johndoe@gmail.com",
-    "password": "password1234"
+    "password": "password01"
     
 
   },
@@ -11,7 +11,7 @@
     "username": "janedoe",
     "name": "Jane Doe",
     "email": "janedoe@yahoo.com",
-    "password": "password1234"
+    "password": "password01"
   }
 
 ]
