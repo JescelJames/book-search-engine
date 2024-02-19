@@ -2,7 +2,7 @@ const typeDefs =`
 
   type User {
     _id: ID!
-    username: String
+    username: String!
     email: String
     password: String
     bookCount: Int
@@ -13,7 +13,7 @@ const typeDefs =`
     bookId: ID!
     authors: [String]
     description: String
-    title: String
+    title: String!
     image: String
     link: String
   }
@@ -21,10 +21,11 @@ const typeDefs =`
   input InputBook {
     authors: [String]
     description: String
-    bookId: String
+    bookId: String!
+    title: String!
     image: String
     link: String
-    title: String
+    
   }
 
 
