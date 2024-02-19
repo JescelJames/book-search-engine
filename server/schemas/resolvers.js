@@ -66,36 +66,36 @@ const resolvers = {
       throw AuthenticationError;
     },
 
-    removeBook: async (_, { bookId }, context) => {
+    removeBook: async (parent, { bookId }, context) => {
       if (context.user) {
-        const updateUsersBooks = await User
-          .findByIdAndUpdate (
+        const updateUsersBooks = await 
+          User.findOneAndUpdate(
             { _id: context.user._id}, 
             { $pull: { savedBooks: { bookId } } }, 
-            { new: true, runValidators: true }
+            { new: true }
           );
         return updateUsersBooks;
       }
       throw AuthenticationError;
     },
 
-    addBook: async (parent, { userId, newBook }, context) => {
+    // addBook: async (parent, { userId, newBook }, context) => {
       
-      // if (context.user) {
-        return User.findOneAndUpdate(
-          { _id: userId },
-          {
-            $addToSet: { savedBooks: newBook },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
-        );
-      // }
+    //   // if (context.user) {
+    //     return User.findOneAndUpdate(
+    //       { _id: userId },
+    //       {
+    //         $addToSet: { savedBooks: newBook },
+    //       },
+    //       {
+    //         new: true,
+    //         runValidators: true,
+    //       }
+    //     );
+    //   // }
      
-      throw AuthenticationError;
-    },
+    //   throw AuthenticationError;
+    // },
 
   }
 
