@@ -29,6 +29,8 @@ Take starter code with a fully functioning Google Books API search engine built 
 6. cliet side: mutations, queries, auth.
 7. viteconfig proxy to graphql
 8. Deploying on Render
+9. Headers in Apollo
+
 
 
 ## Code Description
@@ -55,13 +57,11 @@ Prerequisites:
 
 #### My Instructors:
 - Ben Wright 
-- Max Ohsawa 
+- Max Ohsawa (For helping me deploy to Render)
 
 #### My Academic Advisor
 - Mike Sweeney
 
-#### My Classmates
-- Who are smarter than me, and willing to help at all times.
 
 
 ## Contact
