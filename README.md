@@ -38,17 +38,18 @@ This code can be accessed in terminal by running npm start from root.
 ## Installation Instructions
 
 Prerequisites:  
- - Node.js. Download Node.js at https://nodejs.org/en
+ - Node.js.  https://nodejs.org/en
 
- - npmjs.com inquirer package:  https://www.npmjs.com/package//inquirer
+ - MongoDB:  https://www.mongodb.com/
 
- - jestjs.io:  https://jestjs.io/
+ - Expressjs: https://expressjs.com/
+
+ - Apollo server: https://www.apollographql.com/
 
  ## Usage
-1. Command-line instructions:
+1. Command-line instructions for localhost:
 
-        npm start
-
+        npm run develop
 
 ## Credits
 
