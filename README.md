@@ -62,7 +62,8 @@ Prerequisites:
 #### My Academic Advisor
 - Mike Sweeney
 
-
+#### My Classmates
+- Who are willing to help at all times.
 
 ## Contact
 For any additional questions about this project, contact me at:
