@@ -28,6 +28,7 @@ Take starter code with a fully functioning Google Books API search engine built 
 5. Seeding
 6. cliet side: mutations, queries, auth.
 7. viteconfig proxy to graphql
+8. Deploying on Render
 
 
 ## Code Description
